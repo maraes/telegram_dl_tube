@@ -26,6 +26,7 @@ def download_video(url):
         'format': 'best[ext=mp4]/best',
         'outtmpl': 'video_%(id)s.%(ext)s',
         'max_filesize': 2000 * 1024 * 1024,
+        'cookiefile': 'cookies.txt',
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(url, download=True)
